@@ -1,0 +1,21 @@
+body {
+    background-color: aqua;
+}
+
+#show_sketch {
+    float: right;
+}
+
+h1 {
+    color: blueviolet;
+    background-color: chartreuse;
+}
+
+#score {
+    float: left;
+font-size: 20px;
+}
+#timer{
+    float:right;
+    font-size: 20px;
+}
