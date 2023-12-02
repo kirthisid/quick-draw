@@ -28,3 +28,17 @@ function check_sketch() {
     if (timer_check == "completed" || answer_holder == "set")
     { timer_check = ""; answer_holder = ""; updateCanvas(); }
 }
+
+function preload() {
+    classifier = ml5.imageClassifier("DoodleNet")
+}
+
+function gotresult(error,result){
+    if (error) {
+        console.error(error);
+    }
+    console.log(result);
+    document.getElementById("label").innerHTML="label: "+result[0].label
+    document.getElementById("confidence").innerHTML="confidence: "+Math.round( result[0].confidence*100)+"%"
+    utterThis=new SpeechSynthesisUtterance(result[0].label)
+    synth.speak(utterThis)
